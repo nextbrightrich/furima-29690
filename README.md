@@ -7,7 +7,7 @@
 | nickname       | string | null: false
 | email          | string | null: false |
 | password       | string | null: false |
-| password_again | string | null: false |
+| confirmation   | string | null: false |
 | firstname      | string | null: false |
 | familyname     | string | null: false |
 | firstnamekana  | string | null: false |
@@ -17,7 +17,7 @@
 ### Association
 
 - has_many :items
-- has_many :custmors
+- has_many :custmers
 
 ##  items テーブル
 | Column             | Type      | Options     |
@@ -34,29 +34,29 @@
 
 ### Association
 - belongs_to :user
-- has_one :custmor
+- has_one :custmer
 
 ## custmers テーブル
 | Column             | Type   | Options     |
 | --------           | ------ | ----------- |
-| user_id            | references| null: false, foreign_key: true |
-| item_id            | references| null: false, foreign_key: true |
+| user               | references| null: false, foreign_key: true |
+| item               | references| null: false, foreign_key: true |
 
 ### Association
-- belongs_to :user
-- has many : custmors
+- belongs_to :custmer
 - has one : address
 
 ## addresses  テーブル
 | Column             | Type   | Options     |
 | --------           | ------ | ----------- |
-| postalcode         | integer| null: false|
+| postalcode         | string | null: false|
 | area_id            | string | null: false |
 | housenumber        | string | null: false |
-| building           | string | null: false |
+| building           | string | 
+| telephone          | string | null: false |
 | user               | references| null: false, foreign_key: true |
-| items              | references| null: false, foreign_key: true |
+| cutomer            | references| null: false, foreign_key: true |
 
 ### Association
-- belongs_to : custmor
+- belongs_to : custmer
 
