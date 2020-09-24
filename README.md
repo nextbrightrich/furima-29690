@@ -17,7 +17,7 @@
 ### Association
 
 - has_many :items
-- has_many :custmers
+- has_many :customers
 
 ##  items テーブル
 | Column             | Type      | Options     |
@@ -36,28 +36,26 @@
 - belongs_to :user
 - has_one :custmer
 
-## custmers テーブル
+## customers　テーブル
 | Column             | Type   | Options     |
 | --------           | ------ | ----------- |
 | user               | references| null: false, foreign_key: true |
 | item               | references| null: false, foreign_key: true |
 
 ### Association
-- belongs_to :custmer
-- has one : address
+- belongs_to : user
+- belongs_to : item
 
 ## addresses  テーブル
 | Column             | Type   | Options     |
 | --------           | ------ | ----------- |
 | postalcode         | string | null: false|
-| area_id            | string | null: false |
+| area_id            | integer| null: false |
 | housenumber        | string | null: false |
 | building           | string | 
 | telephone          | string | null: false |
 | customer           | references| null: false, foreign_key: true |
 
 ### Association
-- belongs_to : user
-  belongs_to : items
-
+belongs_to :customer
 
