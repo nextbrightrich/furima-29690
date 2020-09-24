@@ -12,56 +12,51 @@
 | familyname     | string | null: false |
 | firstnamekana  | string | null: false |
 | familynamekana | string | null: false |
-| birthday       | string | null: false |
+| birthday       | date   | null: false |
 
 ### Association
 
 - has_many :items
-- has_many :custmor
-- has_many :custmor, through: adresss
+- has_many :custmors
 
 ##  items テーブル
-| Column             | Type   | Options     |
-| --------           | ------ | ----------- |
-| images             | string | null: false
-| name               | string | null: false |
-| description        | string | null: false |
-| price              | string | null: false |
-| category＿id       | string | null: false |
-| status_id          | string | null: false |
-| burden_id          | string | null: false |
-| area_id            | string | null: false |
-| days_id            | string | null: false |
-| user_id            | string | null: false |
+| Column             | Type      | Options     |
+| --------           | ------    | ----------- |
+| name               | string    | null: false |
+| description        | text      | null: false |
+| price              | integer   | null: false |
+| category＿id      | integer   | null: false |
+| status_id          | integer   | null: false |
+| burden_id          | integer   | null: false |
+| area_id            | integer   | null: false |
+| days_id            | integer   | null: false |
+| user               | references| null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- belongs_to :custmor
-- belongs_to :custmor, through: adresss
+- has_one :custmor
 
 ## custmers テーブル
 | Column             | Type   | Options     |
 | --------           | ------ | ----------- |
-| user_id            | string | null: false |
-| items_id           | string | null: false |
+| user_id            | references| null: false, foreign_key: true |
+| item_id            | references| null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
 - has many : custmors
-- has oner : adress
+- has one : address
 
-## adresss テーブル
+## addresses  テーブル
 | Column             | Type   | Options     |
 | --------           | ------ | ----------- |
-| postalcode         | integer | null: false|
+| postalcode         | integer| null: false|
 | area_id            | string | null: false |
 | housenumber        | string | null: false |
 | building           | string | null: false |
-| userid             | string | null: false |
-| items_id           | string | null: false |
+| user               | references| null: false, foreign_key: true |
+| items              | references| null: false, foreign_key: true |
 
 ### Association
-- belongs_to : custmer , through: user
-- belongs_to : custmor  through: itemes
 - belongs_to : custmor
 
