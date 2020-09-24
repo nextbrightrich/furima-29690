@@ -54,9 +54,10 @@
 | housenumber        | string | null: false |
 | building           | string | 
 | telephone          | string | null: false |
-| user               | references| null: false, foreign_key: true |
-| cutomer            | references| null: false, foreign_key: true |
+| customer           | references| null: false, foreign_key: true |
 
 ### Association
-- belongs_to : custmer
+- belongs_to : user
+  belongs_to : items
+
 
