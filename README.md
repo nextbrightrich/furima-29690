@@ -34,7 +34,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :custmer
+- has_one : customer
 
 ## customers　テーブル
 | Column             | Type   | Options     |
@@ -45,6 +45,7 @@
 ### Association
 - belongs_to : user
 - belongs_to : item
+- has_one : addresses
 
 ## addresses  テーブル
 | Column             | Type   | Options     |
