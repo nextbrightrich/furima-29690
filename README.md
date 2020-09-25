@@ -59,4 +59,3 @@
 
 ### Association
 belongs_to :customer
-
