@@ -10,9 +10,13 @@ class Item < ApplicationRecord
   belongs_to_active_hash :area
   belongs_to_active_hash :days
 
-    #空の投稿を保存できないようにする　
-    validates :title, :text, presence: true
+  #商品名と価格が空の投稿を保存できないようにする 
+  validates :name, :price, presence: true
 
-    #ジャンルの選択が「--」の時は保存できないようにする一旦categoのみ
-    validates :category＿id , numericality: { other_than: 1 } 
+  #ジャンルの選択が「--」の時は保存できないようにする一旦categoのみ
+  validates :category＿id , numericality: { other_than: 1 } 
+  validates :status_id , numericality: { other_than: 1 } 
+  validates :burden_id , numericality: { other_than: 1 } 
+  validates :area_id , numericality: { other_than: 1 } 
+  validates :days_id , numericality: { other_than: 1 } 
 end
