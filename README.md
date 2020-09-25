@@ -6,8 +6,6 @@
 | --------       | ------ | ----------- |
 | nickname       | string | null: false
 | email          | string | null: false |
-| password       | string | null: false |
-| confirmation   | string | null: false |
 | firstname      | string | null: false |
 | familyname     | string | null: false |
 | firstnamekana  | string | null: false |
