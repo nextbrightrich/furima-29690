@@ -23,7 +23,7 @@
 | name               | string    | null: false |
 | description        | text      | null: false |
 | price              | integer   | null: false |
-| category＿id      | integer   | null: false |
+| category＿id       | integer   | null: false |
 | status_id          | integer   | null: false |
 | burden_id          | integer   | null: false |
 | area_id            | integer   | null: false |
