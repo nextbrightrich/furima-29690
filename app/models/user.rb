@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  @user =User.new
+  @users =User.new
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          :confirmable
