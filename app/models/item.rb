@@ -15,7 +15,7 @@ class Item < ApplicationRecord
  validates :name, :price, :description,  :price, :category, :status,  :burden, :burden, :area, :day, presence: true
 
  #ジャンルの選択が「--」の時は保存できないようにする一旦categoのみ
- validates :category＿id , numericality: { other_than: 1 } 
+ validates :category_id , numericality: { other_than: 1 } 
  validates :status_id , numericality: { other_than: 1 } 
  validates :burden_id , numericality: { other_than: 1 } 
  validates :area_id , numericality: { other_than: 1 } 
