@@ -14,9 +14,15 @@ class Item < ApplicationRecord
   validates :name, :price, :description, :image, :price, :category, :status, :burden, :burden, :area, :day, presence: true
 
   # ジャンルの選択が「--」の時は保存できないようにする一旦categoのみ
+  with_options presence: true do
   validates :category_id, numericality: { other_than: 1 }
   validates :status_id, numericality: { other_than: 1 }
   validates :burden_id, numericality: { other_than: 1 }
   validates :area_id, numericality: { other_than: 1 }
   validates :day_id, numericality: { other_than: 1 }
+
+  validates_inclusion_of :price, in: 300..9_999_999
+  end
+
 end
+
