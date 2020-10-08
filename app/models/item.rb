@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  has_one :customer
+  has_one :order
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :day
 
   # 空の投稿を保存できないようにする
-  validates :name, :price, :description, :image, :price, :category, :status, :burden, :burden, :area, :day, presence: true
+  validates :name, :price, :description, :image, :price, :category, :status, :burden, :area, :day, presence: true
 
   # ジャンルの選択が「--」の時は保存できないようにする
   with_options numericality: {other_than: 1 } do
