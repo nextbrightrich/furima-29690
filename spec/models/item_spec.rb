@@ -61,19 +61,19 @@ RSpec.describe Item, type: :model do
     it 'priceが300円未満では保存できないこと' do
       @item.price = 200
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price is not included in the list")
+      expect(@item.errors.full_messages).to include('Price is not included in the list')
     end
 
     it 'priceが9,999,999が円を超過すると保存できないこと' do
       @item.price = 10_000_000
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price is not included in the list")
+      expect(@item.errors.full_messages).to include('Price is not included in the list')
     end
-    
+
     it 'priceが半角でないと保存できないこと' do
-      @item.price = "すずき"
+      @item.price = 'すずき'
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price is not included in the list")
+      expect(@item.errors.full_messages).to include('Price is not included in the list')
     end
 
     it '画像ないと保存できないこと' do
@@ -81,6 +81,5 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include("Image can't be blank")
     end
-
   end
 end
