@@ -50,8 +50,9 @@
 ## addresses  テーブル
 | Column             | Type   | Options     |
 | --------           | ------ | ----------- |
-| postalcode         | string | null: false|
+| postalcode         | string | null: false |
 | area_id            | integer| null: false |
+| municipality       | string | null: false||
 | housenumber        | string | null: false |
 | building           | string | 
 | telephone          | string | null: false |
