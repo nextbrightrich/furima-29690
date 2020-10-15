@@ -4,9 +4,10 @@ class OrderAddress
 
   with_options presence: true do
     validates :postalcode, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
-    validates :municipality , format:  { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
-    validates :housenumber, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
+    validates :municipality 
+    validates :housenumber
     validates :telephone, format:  { with: /\A0(\d{1}[-(]?\d{4}|\d{2}[-(]?\d{3}|\d{3}[-(]?\d{2}|\d{4}[-(]?\d{1})[-)]?\d{4}\z|\A0[5789]0[-]?\d{4}[-]?\d{4}\z/ }
+    validates :token
   end
 
   validates :area_id, numericality: { other_than: 1, message: "can't be blank" }
