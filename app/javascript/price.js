@@ -6,7 +6,6 @@ function price(){
 
    priceinput.addEventListener('keyup', () => {
        const value = priceinput.value;
-       
      if (value >= 300 && value <= 9999999){
        let fee = value * 0.1
        let gains = value - fee
